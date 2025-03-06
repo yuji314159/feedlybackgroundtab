@@ -9,6 +9,8 @@
      * @type {array}
      */
     var selectors = [
+        'a.EntryTitleLink--selected',
+        '.list-entries .entry--selected a.entry__title',
         'div.selectedEntry a.title',                    // title bar for active entry, collapsed or expanded
         '.selectedEntry a.visitWebsiteButton',          // the button square button on list view
         '.list-entries .selected a.visitWebsiteButton', // the button square button on list view
