@@ -1,7 +1,7 @@
 {
     "name": "Feedly Background Tab",
-    "version": "0.13",
-    "manifest_version": 2,
+    "version": "0.14",
+    "manifest_version": 3,
     "description": "Open Feedly Links in Background Tab using shortcut key",
     "content_scripts": [
         {
@@ -9,14 +9,18 @@
             "js": ["js/keypress.js"]
         }
     ],
-    "background": { "scripts": ["js/background.js"] },
+    "background": {
+        "service_worker": "js/background.js"
+    },
     "options_page": "options.html",
-    "permissions": [
+    "host_permissions": [
         "http://www.feedly.com/*",
         "http://cloud.feedly.com/*",
-        "https://cloud.feedly.com/*",
+        "https://cloud.feedly.com/*"
+    ],
+    "permissions": [
         "storage"
     ],
-    "minimum_chrome_version": "21",
+    "minimum_chrome_version": "88",
     "icons": { "128": "images/icon_128.png" }
 }

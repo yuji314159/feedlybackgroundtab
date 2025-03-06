@@ -11,12 +11,13 @@
  *
  * This will open up a new non-focused tab with the url it was sent
  */
-chrome.extension.onMessage.addListener(
-    function(messageObject) {
+chrome.runtime.onMessage.addListener(
+    function(messageObject, sender, sendResponse) {
         chrome.tabs.create({
             url: messageObject.url,
             active: false
         });
+        return true;
     }
 );
 
